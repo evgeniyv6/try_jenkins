@@ -1,5 +1,3 @@
-env.data = ""
-
 pipeline {
     agent any
 
@@ -9,7 +7,7 @@ pipeline {
                 script {
                     echo 'Hello World'
                     echo "${J_V}"
-                    def json = readJSON text: params.data
+                    def json = readJSON text: env.data
                     println("JSON:\n${json}")
                 }
 
