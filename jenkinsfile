@@ -8,6 +8,7 @@ pipeline {
                     echo 'Hello World'
                     echo "${J_V}"
                     echo "===>>> ${env.data}"
+                    echo "================>>>>>>>> ${env.FOO}"
                     echo "------------------"
                     echo "===>>> ${params.data}"
                     def json = readJSON text: env.data
