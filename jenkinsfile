@@ -11,7 +11,7 @@ pipeline {
                     echo "================>>>>>>>> ${env.FOO}"
                     echo "------------------"
                     echo "===>>> ${params.data}"
-                    def json = readJSON text: env.data
+                    def json = readJSON text: params.data
                     println("JSON:\n${json}")
                 }
 
