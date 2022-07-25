@@ -1,6 +1,7 @@
+@Library("myJenLib") _
+
 pipeline {
     agent any
-
     stages {
         stage('Hello') {
             steps {
@@ -14,7 +15,16 @@ pipeline {
                     def json = readJSON text: params.data
                     println("JSON:\n${json}")
                 }
+            }
+        }
+        stage('Shared Lib Stage') {
+            steps {
+                script {
+                    MySharedLib msl = new MySharedLib()
+                    msl.setMyVar('Calling shared lib from jenkinsfile')
+                    msl.printMyVar()
 
+                }
             }
         }
     }
