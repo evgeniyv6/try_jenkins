@@ -7,6 +7,6 @@ class MySharedLib implements Serializable {
     }
 
     def printMyVar() {
-        println("MyVar is ${myVar}")
+        System.out.println("MyVar is ${myVar}")
     }
 }
