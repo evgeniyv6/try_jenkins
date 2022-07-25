@@ -18,8 +18,9 @@ class MySharedLib implements Serializable {
         Random rnd = new Random()
         mySteps.each {
             mapToParall[it] = { ->
-                this.script.echo "parall ${it} started"
-                sleep(rnd.next(10))
+                def tm = rnd.next(10)
+                this.script.echo "parall ${it} started.Sleeping for ${tm}"
+                sleep(tm)
                 this.script.echo "parall ${it} ended"
             }
         }
