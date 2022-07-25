@@ -20,7 +20,7 @@ class MySharedLib implements Serializable {
             mapToParall[it] = { ->
                 def tm = rnd.next(10)
                 this.script.echo "parall ${it} started.Sleeping for ${tm}"
-                sleep(tm)
+                this.script.sleep(tm)
                 this.script.echo "parall ${it} ended"
             }
         }
