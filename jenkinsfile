@@ -1,5 +1,7 @@
 @Library("myJenLib") _
 
+import ru.sb.rml.MySharedLib
+
 pipeline {
     agent any
     stages {
