@@ -25,6 +25,9 @@ pipeline {
                     MySharedLib msl = new MySharedLib(this)
                     msl.setMyVar('Calling shared lib from jenkinsfile')
                     msl.printMyVar()
+                    msl.parallRunning()
+
+                    }
 
                 }
             }

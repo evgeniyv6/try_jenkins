@@ -11,4 +11,15 @@ class MySharedLib implements Serializable {
     def printMyVar() {
         this.script.println("MyVar is ${myVar}")
     }
+
+    def parallRunning() {
+        def mySteps = ["one", "two", "three", "four"]
+        def mapToParall = [:]
+        mySteps.each {
+            mapToParall[it] = { ->
+                this.script.echo "parall ${it}"
+            }
+        }
+        this.script.parallel mapToParall
+    }
 }
