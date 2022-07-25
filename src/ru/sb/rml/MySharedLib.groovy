@@ -15,8 +15,10 @@ class MySharedLib implements Serializable {
     def parallRunning() {
         def mySteps = ["one", "two", "three", "four"]
         def mapToParall = [:]
+        Random rnd = new Random()
         mySteps.each {
             mapToParall[it] = { ->
+                this.script.sleep(rnd.next(10))
                 this.script.echo "parall ${it}"
             }
         }
