@@ -2,11 +2,13 @@ package ru.sb.rml
 
 class MySharedLib implements Serializable {
     def myVar
+    def script
 
-    MySharedLib() {
+    MySharedLib(def script) {
+        this.script = script
     }
 
     def printMyVar() {
-        System.out.println("MyVar is ${myVar}")
+        this.script.println("MyVar is ${myVar}")
     }
 }

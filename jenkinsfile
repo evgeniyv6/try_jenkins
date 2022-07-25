@@ -22,7 +22,7 @@ pipeline {
         stage('Shared Lib Stage') {
             steps {
                 script {
-                    MySharedLib msl = new MySharedLib()
+                    MySharedLib msl = new MySharedLib(this)
                     msl.setMyVar('Calling shared lib from jenkinsfile')
                     msl.printMyVar()
 
